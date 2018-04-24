@@ -1,7 +1,5 @@
 package com.nbs.introokhttpretrofit.domain;
 
-import android.text.TextUtils;
-
 import com.google.gson.Gson;
 import com.nbs.introokhttpretrofit.data.libs.ApiConnection;
 import com.nbs.introokhttpretrofit.data.request.BaseRequest;
@@ -29,8 +27,8 @@ public abstract class UseCase<T extends BaseRequest, D extends BaseResponse> {
         this.baseRequest = baseRequest;
     }
 
-    public UseCase() {
-        apiConnection = new ApiConnection();
+    public UseCase(ApiConnection apiConnection) {
+        this.apiConnection = apiConnection;
     }
 
     protected Call<D> getApiCall() {

@@ -6,16 +6,20 @@ import com.nbs.introokhttpretrofit.domain.GetAllLeagueUseCase;
 
 import java.util.ArrayList;
 
+import javax.inject.Inject;
+
 public class MainPresenter implements MainContract.Presenter,
         GetAllLeagueUseCase.OnGetAllLeagueCallback{
 
-    private MainContract.View view;
+    MainContract.View view;
 
-    private GetAllLeagueUseCase getAllLeagueUseCase;
+    @Inject
+    GetAllLeagueUseCase getAllLeagueUseCase;
 
-    public MainPresenter(MainContract.View view) {
+    @Inject
+    public MainPresenter(MainContract.View view, GetAllLeagueUseCase getAllLeagueUseCase) {
         this.view = view;
-        this.getAllLeagueUseCase = new GetAllLeagueUseCase();
+        this.getAllLeagueUseCase = getAllLeagueUseCase;
         this.getAllLeagueUseCase.setOnGetAllLeagueCallback(this);
     }
 

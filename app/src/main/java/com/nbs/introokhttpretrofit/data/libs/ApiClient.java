@@ -6,6 +6,6 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface ApiClient {
-    @GET("all_leaguess.php")
+    @GET("all_leagues.php")
     Call<LeagueResponse> getAllLeagues();
 }

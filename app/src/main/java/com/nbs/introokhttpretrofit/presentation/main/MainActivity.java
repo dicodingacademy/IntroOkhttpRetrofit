@@ -9,9 +9,14 @@ import android.widget.Toast;
 
 import com.nbs.introokhttpretrofit.R;
 import com.nbs.introokhttpretrofit.data.model.League;
+import com.nbs.introokhttpretrofit.di.component.ApplicationComponent;
+import com.nbs.introokhttpretrofit.di.component.DaggerApplicationComponent;
+import com.nbs.introokhttpretrofit.di.module.ActivityModule;
 import com.nbs.introokhttpretrofit.presentation.richview.LoadingView;
 
 import java.util.ArrayList;
+
+import javax.inject.Inject;
 
 public class MainActivity extends AppCompatActivity implements MainContract.View,
         LoadingView.OnButtonRetryClickListener{
@@ -20,19 +25,26 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
     private TextView tvResponse;
 
-    private MainContract.Presenter presenter;
+    @Inject
+    MainContract.Presenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ApplicationComponent applicationComponent = DaggerApplicationComponent
+                .builder()
+                .activityModule(new ActivityModule(this))
+                .build();
+
+        applicationComponent.inject(this);
+
         loadingView = findViewById(R.id.loading_view);
         loadingView.setOnButtonRetryClickListener(this);
 
         tvResponse = findViewById(R.id.tv_response);
 
-        presenter = new MainPresenter(this);
         getData();
     }
 

@@ -1,5 +1,6 @@
 package com.nbs.introokhttpretrofit.domain;
 
+import com.nbs.introokhttpretrofit.data.libs.ApiConnection;
 import com.nbs.introokhttpretrofit.data.model.League;
 import com.nbs.introokhttpretrofit.data.request.BaseRequest;
 import com.nbs.introokhttpretrofit.data.response.LeagueResponse;
@@ -11,6 +12,10 @@ import retrofit2.Call;
 public class GetAllLeagueUseCase extends UseCase<BaseRequest, LeagueResponse>{
 
     private OnGetAllLeagueCallback onGetAllLeagueCallback;
+
+    public GetAllLeagueUseCase(ApiConnection apiConnection) {
+        super(apiConnection);
+    }
 
     public OnGetAllLeagueCallback getOnGetAllLeagueCallback() {
         return onGetAllLeagueCallback;

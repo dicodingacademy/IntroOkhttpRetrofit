@@ -1,0 +1,28 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <declare-styleable name="LoadingView">
+        <attr name="error_message" format="string"/>
+        <attr name="need_retry" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="SinarmasEditTextView">
+        <attr name="text_hint" format="string"/>
+        <attr name="default_error_message" format="string"/>
+        <attr name="is_mandatory" format="boolean"/>
+        <attr name="rule" format="integer">
+            <enum name="text" value="1"/>
+            <enum name="email" value="2"/>
+            <enum name="currency" value="3"/>
+            <enum name="phonenumber" value="4"/>
+        </attr>
+    </declare-styleable>
+
+</resources>

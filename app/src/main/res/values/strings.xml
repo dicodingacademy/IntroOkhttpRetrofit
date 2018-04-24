@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">IntroOkhttpRetrofit</string>
+    <string name="error_message_field_required">Harus diisi</string>
+</resources>

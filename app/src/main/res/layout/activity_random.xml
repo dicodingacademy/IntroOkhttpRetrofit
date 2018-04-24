@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".presentation.random.RandomActivity">
+    <com.nbs.introokhttpretrofit.presentation.richview.SinarmasEditTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/input_name"
+        app:is_mandatory="true"
+        app:default_error_message="@string/error_message_field_required"
+        app:text_hint="Name"/>
+
+    <com.nbs.introokhttpretrofit.presentation.richview.SinarmasEditTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/input_alamat"
+        app:is_mandatory="true"
+        app:default_error_message="@string/error_message_field_required"
+        app:text_hint="Alamat"/>
+
+    <com.nbs.introokhttpretrofit.presentation.richview.SinarmasEditTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/input_email"
+        app:is_mandatory="true"
+        app:default_error_message="@string/error_message_field_required"
+        app:text_hint="Email"
+        app:rule="email"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_submit"
+        android:layout_margin="16dp"
+        android:text="Submit"/>
+
+</LinearLayout>

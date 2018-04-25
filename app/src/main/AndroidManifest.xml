@@ -18,8 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".presentation.random.RandomActivity">
-        </activity>
+        <activity android:name=".presentation.random.RandomActivity"></activity>
+        <activity android:name=".presentation.league.LeagueByNameActivity"></activity>
     </application>
 
 </manifest>

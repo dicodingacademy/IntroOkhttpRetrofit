@@ -26,7 +26,7 @@ public class MainPresenter implements MainContract.Presenter,
     //region GetAllLeagues
     @Override
     public void getAllLeagues() {
-        view.showLoding();
+        view.showLoading();
 
         getAllLeagueUseCase.setBaseRequest(new BaseRequest());
         getAllLeagueUseCase.execute();

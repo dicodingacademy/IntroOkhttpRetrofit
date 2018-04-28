@@ -16,6 +16,9 @@ public class ActivityModule {
 
     private LeagueContract.View leagueByNameView;
 
+    public ActivityModule() {
+    }
+
     public ActivityModule(MainContract.View view) {
         this.view = view;
     }
